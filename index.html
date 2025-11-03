@@ -19,6 +19,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#quotation">Quotation</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="burger">
@@ -47,8 +48,8 @@
                 <div class="company-info">
                     <h1>CHIC EVENTS</h1>
                     <p>📍 Coimbatore, Tamil Nadu</p>
-                    <p>📧 thechicaffairs@gmail.com</p>
-                    <p>📱 +91 9360422935</p>
+                    <p>📧 <a href="mailto:thechicaffairs@gmail.com">thechicaffairs@gmail.com</a></p>
+                    <p>📱 <a href="tel:+919360422935">+91 9360422935</a></p>
                 </div>
                 <div class="quote-details">
                     <h2>QUOTATION</h2>
@@ -63,7 +64,12 @@
     <!-- Price Table Section -->
     <section class="price-table">
         <div class="container">
-            <h2 class="budget-title">Budget</h2>
+            <div class="budget-header">
+                <h2 class="budget-title">Budget</h2>
+                <button onclick="window.print()" class="download-pdf-btn">
+                    <span>📄</span> Download PDF
+                </button>
+            </div>
             <div class="table-container">
                 <table class="quotation-table">
                     <thead>
@@ -490,6 +496,115 @@
         </div>
     </section>
 
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Work</h2>
+                <div class="underline"></div>
+                <p class="section-description">Experience our events through stunning visuals</p>
+            </div>
+            <div class="gallery-grid">
+                <!-- Photos -->
+                <div class="gallery-item" onclick="openLightbox('photos/PHOTO-2025-10-09-10-51-06.jpg', 'Event Photo 1')">
+                    <img src="photos/PHOTO-2025-10-09-10-51-06.jpg" alt="Event Photo 1">
+                    <div class="gallery-overlay">
+                        <span>📷 View Photo</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('photos/PHOTO-2025-11-03-10-57-51.jpg', 'Event Photo 2')">
+                    <img src="photos/PHOTO-2025-11-03-10-57-51.jpg" alt="Event Photo 2">
+                    <div class="gallery-overlay">
+                        <span>📷 View Photo</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('photos/PHOTO-2025-11-03-10-58-04.jpg', 'Event Photo 3')">
+                    <img src="photos/PHOTO-2025-11-03-10-58-04.jpg" alt="Event Photo 3">
+                    <div class="gallery-overlay">
+                        <span>📷 View Photo</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('photos/PHOTO-2025-11-03-10-58-08.jpg', 'Event Photo 4')">
+                    <img src="photos/PHOTO-2025-11-03-10-58-08.jpg" alt="Event Photo 4">
+                    <div class="gallery-overlay">
+                        <span>📷 View Photo</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox('photos/PHOTO-2025-11-03-10-58-08 2.jpg', 'Event Photo 5')">
+                    <img src="photos/PHOTO-2025-11-03-10-58-08 2.jpg" alt="Event Photo 5">
+                    <div class="gallery-overlay">
+                        <span>📷 View Photo</span>
+                    </div>
+                </div>
+                
+                <!-- Videos -->
+                <div class="gallery-item video-item">
+                    <video controls>
+                        <source src="photos/VIDEO-2025-10-09-10-51-08.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-badge">▶️ Video</div>
+                </div>
+                <div class="gallery-item video-item">
+                    <video controls>
+                        <source src="photos/VIDEO-2025-10-09-10-51-08 2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-badge">▶️ Video</div>
+                </div>
+                <div class="gallery-item video-item">
+                    <video controls>
+                        <source src="photos/VIDEO-2025-11-03-10-57-50.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-badge">▶️ Video</div>
+                </div>
+                <div class="gallery-item video-item">
+                    <video controls>
+                        <source src="photos/VIDEO-2025-11-03-10-57-58.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-badge">▶️ Video</div>
+                </div>
+                <div class="gallery-item video-item">
+                    <video controls>
+                        <source src="photos/VIDEO-2025-11-03-10-58-02.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-badge">▶️ Video</div>
+                </div>
+                <div class="gallery-item video-item">
+                    <video controls>
+                        <source src="photos/VIDEO-2025-11-03-10-58-03.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-badge">▶️ Video</div>
+                </div>
+                <div class="gallery-item video-item">
+                    <video controls>
+                        <source src="photos/VIDEO-2025-11-03-10-58-05.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-badge">▶️ Video</div>
+                </div>
+                <div class="gallery-item video-item">
+                    <video controls>
+                        <source src="photos/VIDEO-2025-11-03-10-58-07.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-badge">▶️ Video</div>
+                </div>
+                <div class="gallery-item video-item">
+                    <video controls>
+                        <source src="photos/VIDEO-2025-11-03-10-58-09.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-badge">▶️ Video</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -501,11 +616,11 @@
                 <div class="contact-info">
                     <div class="info-item">
                         <h3>📧 Email</h3>
-                        <p>thechicaffairs@gmail.com</p>
+                        <p><a href="mailto:thechicaffairs@gmail.com">thechicaffairs@gmail.com</a></p>
                     </div>
                     <div class="info-item">
                         <h3>📱 Phone</h3>
-                        <p>+91 9360422935<br>+91 8925234474</p>
+                        <p><a href="tel:+919360422935">+91 9360422935</a><br><a href="tel:+918925234474">+91 8925234474</a></p>
                     </div>
                     <div class="info-item">
                         <h3>📍 Location</h3>
@@ -517,11 +632,11 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="tel" placeholder="Your Phone" required>
-                        <textarea placeholder="Event Details / Requirements" rows="5" required></textarea>
+                    <form id="contactForm">
+                        <input type="text" id="contactName" placeholder="Your Name" required>
+                        <input type="email" id="contactEmail" placeholder="Your Email" required>
+                        <input type="tel" id="contactPhone" placeholder="Your Phone" required>
+                        <textarea id="contactMessage" placeholder="Event Details / Requirements" rows="5" required></textarea>
                         <button type="submit" class="submit-button">Request Quote</button>
                     </form>
                 </div>
@@ -543,17 +658,15 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#quotation">Quotation</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#" class="social-link">Facebook</a>
-                        <a href="#" class="social-link">Instagram</a>
-                        <a href="#" class="social-link">Twitter</a>
-                        <a href="#" class="social-link">LinkedIn</a>
-                    </div>
+                    <h4>Contact Us</h4>
+                    <p>📧 <a href="mailto:thechicaffairs@gmail.com" style="color: #aaa;">thechicaffairs@gmail.com</a></p>
+                    <p>📱 <a href="tel:+919360422935" style="color: #aaa;">+91 9360422935</a></p>
+                    <p>📱 <a href="tel:+918925234474" style="color: #aaa;">+91 8925234474</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -569,6 +682,17 @@
             <h2 id="modalTitle"></h2>
             <div id="modalBody"></div>
         </div>
+    </div>
+
+    <!-- Image Lightbox Modal -->
+    <div id="lightboxModal" class="modal lightbox-modal">
+        <span class="close-modal" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-controls">
+            <button class="rotate-btn" onclick="rotateImage(-90)" title="Rotate Left">↺</button>
+            <button class="rotate-btn" onclick="rotateImage(90)" title="Rotate Right">↻</button>
+        </div>
+        <img id="lightboxImage" src="" alt="Full size image">
+        <div class="lightbox-caption"></div>
     </div>
 
     <script src="script.js"></script>

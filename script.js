@@ -42,16 +42,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar Background on Scroll
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(26, 26, 46, 1)';
-    } else {
-        navbar.style.background = 'rgba(26, 26, 46, 0.95)';
-    }
-});
-
 // Intersection Observer for Scroll Animations
 const observerOptions = {
     threshold: 0.1,
@@ -76,14 +66,37 @@ document.querySelectorAll('.service-card, .info-item').forEach(el => {
 });
 
 // Form Submission Handler
-const contactForm = document.querySelector('.contact-form form');
+const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
-        // Here you would typically send the data to a server
-        alert('Thank you for your inquiry! We will send you a detailed quotation within 24 hours.');
-        contactForm.reset();
+        // Get form values
+        const name = document.getElementById('contactName').value;
+        const email = document.getElementById('contactEmail').value;
+        const phone = document.getElementById('contactPhone').value;
+        const message = document.getElementById('contactMessage').value;
+        
+        // Construct mailto URL with pre-filled data
+        const subject = encodeURIComponent(`Quote Request from ${name}`);
+        const body = encodeURIComponent(
+            `Name: ${name}\n` +
+            `Email: ${email}\n` +
+            `Phone: ${phone}\n\n` +
+            `Event Details / Requirements:\n${message}\n\n` +
+            `---\n` +
+            `This is an automated quote request from Chic Events website.`
+        );
+        
+        const mailtoLink = `mailto:thechicaffairs@gmail.com?subject=${subject}&body=${body}`;
+        
+        // Open default email client
+        window.location.href = mailtoLink;
+        
+        // Optional: Reset form after a short delay
+        setTimeout(() => {
+            contactForm.reset();
+        }, 500);
     });
 }
 
@@ -353,3 +366,52 @@ function getServiceQuotationData(serviceType) {
     
     return data[serviceType] || { title: 'Service Details', content: '<p>No data available</p>' };
 }
+
+// Lightbox Functions for Image Gallery
+let currentRotation = 0;
+
+function openLightbox(imageSrc, caption) {
+    const lightbox = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImage');
+    const lightboxCaption = document.querySelector('.lightbox-caption');
+    
+    lightboxImg.src = imageSrc;
+    lightboxCaption.textContent = caption;
+    currentRotation = 0; // Reset rotation when opening new image
+    lightboxImg.style.transform = `rotate(0deg)`;
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightboxModal');
+    lightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    currentRotation = 0; // Reset rotation when closing
+}
+
+function rotateImage(degrees) {
+    currentRotation += degrees;
+    const lightboxImg = document.getElementById('lightboxImage');
+    lightboxImg.style.transform = `rotate(${currentRotation}deg)`;
+}
+
+// Close lightbox when clicking outside the image
+document.addEventListener('click', function(event) {
+    const lightbox = document.getElementById('lightboxModal');
+    const lightboxImg = document.getElementById('lightboxImage');
+    const controls = document.querySelector('.lightbox-controls');
+    
+    // Don't close if clicking on image or controls
+    if (event.target === lightbox && event.target !== lightboxImg && !controls.contains(event.target)) {
+        closeLightbox();
+    }
+});
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeLightbox();
+    }
+});
+
